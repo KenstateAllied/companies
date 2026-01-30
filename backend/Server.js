@@ -31,9 +31,9 @@ app.post('/api/leads', async (req, res) => {
  
 
   try {
-    const { name, id, prof, level, exp, ward, phone, email } = req.body;
+    const { name, reg, field, location, tel, email,wWebsite, app } = req.body;
 
-    const lead = new Lead({ name, id, prof, level, exp, ward, phone, email });
+    const lead = new Lead({ name, reg, field, location, tel, email,wWebsite, app });
     await lead.save();
 
     console.log("✅ Saved to MongoDB");

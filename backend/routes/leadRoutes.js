@@ -5,9 +5,9 @@ const router = express.Router();
 
 // POST /api/leads
 router.post('/', async (req, res) => {
-  const { name, id, prof, level, exp, ward, phone, email } = req.body;
+  const { name, reg, field, location, tel, email, website, app } = req.body;
   try {
-    const newLead = new Lead({ name, id, prof, level, exp, ward, phone, email });
+    const newLead = new Lead({ name, reg, field, location, tel, email, website, app });
     await newLead.save();
     res.status(201).json({ message: 'Lead saved successfully' });
   } catch (err) {
